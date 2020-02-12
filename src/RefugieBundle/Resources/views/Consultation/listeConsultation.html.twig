@@ -1,0 +1,32 @@
+{% extends 'base_front.html.twig' %}
+{% block container %}
+    <div class="active-pink-3 active-pink-4 mb-4">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </div>
+<center></center><table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Sujet</th>
+        <th>Contenu</th>
+        <th>Durée</th>
+        <th>Date</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for const in consultation %}
+    <tr>
+        <td>{{ const.idref.nom }}</td>
+        <td>{{ const.sujet }}</td>
+        <td>{{ const.contenu }}</td>
+
+        <td>{{ const.duree}}</td>
+        <td>{{ const.date |date }}</td>
+        <td><a href="{{ path('modifier_Consult',{'id':const.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_Consultation',{'id':const.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table></center>
+{% endblock %}

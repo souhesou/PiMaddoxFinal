@@ -1,0 +1,8 @@
+gcamp_camp:
+    resource: "@GcampBundle/Resources/config/routing/camp.php"
+    prefix:   /camp
+
+
+gcamp_besoins:
+    resource: "@GcampBundle/Resources/config/routing/besoins.php"
+    prefix:   /besoins

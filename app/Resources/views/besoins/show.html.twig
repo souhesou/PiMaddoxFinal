@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+    <h1>Besoin</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ besoin.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombs</th>
+                <td>{{ besoin.nomBs }}</td>
+            </tr>
+            <tr>
+                <th>Quantite</th>
+                <td>{{ besoin.quantite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('besoins_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('besoins_edit', { 'id': besoin.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </center>
+{% endblock %}

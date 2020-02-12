@@ -1,0 +1,43 @@
+ajout_Refugie:
+    path:     /ajout
+    defaults: { _controller: RefugieBundle:Refugie:ajout }
+affiche_Refugie:
+    path:     /affiche
+    defaults: { _controller: RefugieBundle:Refugie:affiche}
+modifier_Refugie:
+    path:     /modifier{id}
+    defaults: { _controller: RefugieBundle:Refugie:modifier}
+supprimer_Refugie:
+    path:     /supprimer{id}
+    defaults: { _controller: RefugieBundle:Refugie:supprimer}
+ajout_Consultation:
+    path:     /ajouter
+    defaults: { _controller: RefugieBundle:Consultation:ajout }
+affiche_Consultation:
+    path:     /afficher
+    defaults: { _controller: RefugieBundle:Consultation:affiche}
+supprimer_Consultation:
+    path:     /supprime{id}
+    defaults: { _controller: RefugieBundle:Consultation:supprimer}
+modifier_Consult:
+    path:     /modifierConsultation/{id}
+    defaults: { _controller: RefugieBundle:Consultation:modifier}
+modifier_BRefugie:
+    path:     /modifierrefBack/{id}
+    defaults: { _controller: RefugieBundle:Refugie:modifierBack}
+
+affiche_BRefugie:
+    path:     /afficheBack
+    defaults: { _controller: RefugieBundle:Refugie:afficheBack}
+ajout_BRefugie:
+    path:     /ajoutBack
+    defaults: { _controller: RefugieBundle:Refugie:ajoutB }
+AcceuilBack:
+    path:     /acceuilBack
+    defaults: { _controller: RefugieBundle:Default:Back}
+supprimer_BRefugie:
+    path:     /supprimerBack/{id}
+    defaults: { _controller: RefugieBundle:Refugie:supprimerBack}
+AcceuilFront:
+    path:     /acceuilFront
+    defaults: { _controller: RefugieBundle:Default:Front}

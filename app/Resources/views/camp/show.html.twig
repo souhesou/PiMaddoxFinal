@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+    <h1>Camp</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ camp.id }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ camp.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Capacite</th>
+                <td>{{ camp.capacite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="sub">
+        <li class="active">
+            <a href="{{ path('camp_index') }}">Back to the list</a>
+        </li>
+        <li class="active">
+            <a href="{{ path('camp_edit', { 'id': camp.id }) }}">Edit</a>
+        </li>
+        <li class="active">
+            {{ form_start(delete_form) }}
+                <input type="submit"  class="btn btn-theme" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </center>
+{% endblock %}

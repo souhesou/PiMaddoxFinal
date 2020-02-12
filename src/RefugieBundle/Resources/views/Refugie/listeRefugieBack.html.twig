@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+
+   <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Age</th>
+            <th>Origin</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for refug in refugie %}
+            <tr>
+                <td>{{ refug.nom }}</td>
+                <td>{{ refug.prenom }}</td>
+                <td>{{ refug.age }}</td>
+                <td>{{ refug.origine }}</td>
+                <td><a href="{{ path('modifier_BRefugie',{'id':refug.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_BRefugie',{'id':refug.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base_front.html.twig' %}
+{% block container %}
+    <div class="active-pink-3 active-pink-4 mb-4">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Age</th>
+        <th>Origin</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for refug in refugie %}
+    <tr>
+        <td>{{ refug.nom }}</td>
+        <td>{{ refug.prenom }}</td>
+        <td>{{ refug.age }}</td>
+        <td>{{ refug.origine }}</td>
+        <td><a href="{{ path('modifier_Refugie',{'id':refug.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_Refugie',{'id':refug.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
