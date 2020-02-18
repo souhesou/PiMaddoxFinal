@@ -1,29 +1,18 @@
 {% extends 'base_front.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block container %}
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
 
-    <form method="post">
-        <div class="form-group">
-            <label for="formGroupExampleInput">Name</label>
-            {{ form_widget(form.idref, {'attr': {'class': 'form-control'}}) }}        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput">Topic</label>
-            {{ form_widget(form.sujet, {'attr': {'class': 'form-control'}}) }}        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Date</label>
-            {{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}        </div>
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Duration</label>
-            {{ form_widget(form.duree, {'attr': {'class': 'form-control'}}) }}        </div>
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Contents</label>
-            {{ form_widget(form.contenu, {'attr': {'class': 'form-control'}}) }}        </div>
-        </div>
+    {{ form_row(form.idref, {'attr': {'class': 'form-control'}}) }}
+    {{ form_row(form.sujet, {'attr': {'placeholder':"Consultation's Topic"}}) }}
+    {{ form_row(form.date, {'attr': {'placeholder':''}}) }}
+    {{ form_row(form.duree, {'attr': {'placeholder':"Consultation's Duration"}}) }}
+    {{ form_row(form.contenu, {'attr': {'placeholder':"Consultation's Contents"}}) }}
+    <br>
+    <center> <button type="submit" class="btn btn-primary"> Update</button></center><br><br>
+    <br>
+    <br>
+    {{ form_end(form) }}
 
-        <div class="col-auto my-1">
-           <center> <button type="submit" class="btn btn-primary">Update</button></center>
-        </div>
-    </form>
 
 {% endblock %}

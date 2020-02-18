@@ -2,6 +2,10 @@
 
 namespace RefugieBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+use DocDocDoc\NexmoBundle\Message\Simple;
+
+use GcampBundle\Entity\Camp;
 use RefugieBundle\Entity\RefConsult;
 use RefugieBundle\Entity\Refugee;
 use RefugieBundle\Entity\Refugie;
@@ -13,23 +17,12 @@ class RefugieController extends Controller
 {
     public function ajoutAction(Request $request)
     {
-/*
-        $c=$this->getDoctrine()->getManager();
-        if($request->isMethod('POST')) {
-            $nom = $request->get('nom');
-            $prenom= $request->get('prenom');
-                $age= $request->get('age');
-                    $origine= $request->get('origine');
-            $refuge=new Refugie($nom,$prenom,$age,$origine);
-            $c->persist($refuge);
-            $c->flush();
-            return $this->redirectToRoute('affiche_Refugie');
-        }return $this->render("@Refugie/Refugie/ajout.html.twig");*/
+        if ($this->isGranted("ROLE_RESPCAMP")){
 
         $refugie= new Refugie();
         $form=$this->createForm(RefugieType::class,$refugie);
         $form->handleRequest($request);
-        if($form->isSubmitted())
+        if( $form->isSubmitted() && $form->isValid())
         {
             $em=$this->getDoctrine()->getManager();
             $em->persist($refugie);
@@ -37,6 +30,8 @@ class RefugieController extends Controller
             return $this->redirectToRoute('affiche_Refugie');
         }
         return $this->render('@Refugie/Refugie/ajout.html.twig', array('form' => $form->createView()));
+    }else return $this->render('@Refugie/index.html.twig');
+
     }
 
 
@@ -45,7 +40,7 @@ class RefugieController extends Controller
         $refugie= new Refugie();
         $form=$this->createForm(RefugieType::class,$refugie);
         $form->handleRequest($request);
-        if($form->isSubmitted())
+        if($form->isSubmitted()&& $form->isValid())
         {
             $em=$this->getDoctrine()->getManager();
             $em->persist($refugie);
@@ -59,8 +54,14 @@ class RefugieController extends Controller
 
     public function afficheAction(Request $request)
     {
+
+        if ($this->isGranted("ROLE_RESPCAMP")){
+
         $refugie=$this->getDoctrine()->getRepository(Refugie::class)->findAll();
         return $this->render("@Refugie/Refugie/listeRefugie.html.twig",array('refugie'=>$refugie));
+        }else return $this->render('@Refugie/index.html.twig');
+
+
     }
 
 
@@ -78,13 +79,17 @@ class RefugieController extends Controller
     $cours=$em->getRepository(Refugie::class)->find($id);
     $form=$this->createForm(RefugieType::class,$cours);
     $form->handleRequest($request);
-    if($form->isSubmitted()) {
+    if($form->isSubmitted() && $form->isValid()) {
         $em=$this->getDoctrine()->getManager();
         $em->flush();
         return $this->redirectToRoute('affiche_Refugie');
     }
     return $this->render('@Refugie/Refugie/modifier.html.twig', array('form' => $form->createView()));
 }
+
+
+
+
     public function modifierBackAction($id,Request $request)
     {
         $cours= new Refugie();
@@ -92,7 +97,7 @@ class RefugieController extends Controller
         $cours=$em->getRepository(Refugie::class)->find($id);
         $form=$this->createForm(RefugieType::class,$cours);
         $form->handleRequest($request);
-        if($form->isSubmitted()) {
+        if($form->isSubmitted() && $form->isValid()) {
             $em=$this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('affiche_BRefugie');
@@ -123,5 +128,7 @@ class RefugieController extends Controller
         $c->flush();
         return  $this->redirectToRoute("affiche_BRefugie");
     }
+
+
 
 }

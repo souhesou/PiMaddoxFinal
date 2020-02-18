@@ -41,3 +41,10 @@ supprimer_BRefugie:
 AcceuilFront:
     path:     /acceuilFront
     defaults: { _controller: RefugieBundle:Default:Front}
+affiche_ConsultationBack:
+    path:     /afficherBack
+    defaults: { _controller: RefugieBundle:Consultation:afficheB}
+
+
+
+

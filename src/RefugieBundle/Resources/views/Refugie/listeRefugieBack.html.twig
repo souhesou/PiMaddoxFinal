@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %}
 {% block container %}
 
+    <div class="active-pink-3 active-pink-4 mb-4">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+
+    </div>
+    <br>
+    <br>
+    <br>
+
    <table class="table">
         <thead>
         <tr>
@@ -26,5 +34,12 @@
 </table>
 
 
+    <br>
+
+    <div class="col-xs-12" align="right">
+
+        <button class="btn btn-primary btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>      IMPRIMER</button>
+
+    </div>
 
 {% endblock %}

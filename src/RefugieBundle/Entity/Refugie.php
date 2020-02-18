@@ -3,6 +3,7 @@
 
 namespace RefugieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
 /**
  * @ORM\Entity
  *
@@ -17,18 +18,35 @@ class Refugie
     public $id;
     /**
      * @ORM\Column(type="string",length=255)
+     * @Assert\Length(min="3",max="30",minMessage="Please enter at least 3 characters",maxMessage="Please do not exceed 30 characters")
+     * @Assert\NotBlank(message="please fill in the field")
+     * @Assert\Regex(
+     *     pattern     = "/^[a-z]+$/i",
+     *     htmlPattern = "^[a-zA-Z]+$",message="Special characters prohibited")
      */
     private $nom;
     /**
      * @ORM\Column(type="string",length=255)
+     *  @Assert\Length(min="3",max="30",minMessage="Please enter at least 3 characters",maxMessage="Please do not exceed 30 characters")
+     *  @Assert\NotBlank(message="please fill in the field")
+     *  @Assert\Regex(
+     *     pattern     = "/^[a-z]+$/i",
+     *     htmlPattern = "^[a-zA-Z]+$",message="Special characters prohibited"
+     * )
      */
     private $prenom;
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="please fill in the field")
      */
     private $age;
     /**
      * @ORM\Column(type="string",length=255)
+     *  @Assert\Length(min="3",max="20",minMessage="Please enter at least 3 characters",maxMessage="Please do not exceed 20 characters")
+     *  @Assert\NotBlank(message="please fill in the field")
+     *  @Assert\Regex(
+     *     pattern     = "/^[a-z]+$/i",
+     *     htmlPattern = "^[a-zA-Z]+$",message="Special characters prohibited")
      */
     private $origine;
 

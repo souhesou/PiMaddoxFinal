@@ -1,10 +1,11 @@
-{% extends 'base_front.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block container %}
     <div class="active-pink-3 active-pink-4 mb-4">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
 
     </div>
-<center></center><table class="table">
+    <br><br><br>
+<center><table class="table">
     <thead>
     <tr>
         <th>Name</th>
@@ -12,8 +13,6 @@
         <th>Contents</th>
         <th>Duration</th>
         <th>Date</th>
-        <th>Action</th>
-
     </tr>
     </thead>
     <tbody>
@@ -24,18 +23,16 @@
         <td>{{ const.contenu }}</td>
         <td>{{ const.duree |date('g:i') }}</td>
         <td>{{ const.date |date }}</td>
-        <td><a href="{{ path('modifier_Consult',{'id':const.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_Consultation',{'id':const.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
     </tr>
     {% endfor %}
     </tbody>
 </table></center>
+<br>
 
     <div class="col-xs-12" align="right">
-        <br><br>
-        <br><br>
-        <br><br>
+
         <button class="btn btn-primary btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>      IMPRIMER</button>
-        <br>
-        <br>
+
     </div>
+
 {% endblock %}

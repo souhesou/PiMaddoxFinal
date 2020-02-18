@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new GcampBundle\GcampBundle(),
             new UserBundle\UserBundle(),
             new RefugieBundle\RefugieBundle(),
+            new DocDocDoc\NexmoBundle\DocDocDocNexmoBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

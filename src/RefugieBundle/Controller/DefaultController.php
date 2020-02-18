@@ -2,6 +2,8 @@
 
 namespace RefugieBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+use GcampBundle\Entity\Camp;
 use RefugieBundle\Entity\Refugie;
 use RefugieBundle\Form\RefugieType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -14,6 +16,8 @@ class DefaultController extends Controller
 
         return $this->render('@Refugie/indexBack.html.twig');
     }
+
+
 
     public function FrontAction()
     {

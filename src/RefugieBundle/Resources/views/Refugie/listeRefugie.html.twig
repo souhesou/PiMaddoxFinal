@@ -1,8 +1,14 @@
 {% extends 'base_front.html.twig' %}
 {% block container %}
-    <div class="active-pink-3 active-pink-4 mb-4">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-    </div>
+
+    <form class="navbar-form">
+        <th> <input type="text" id="search" placeholder="search..."></th>
+        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+
+        </button>
+
+    </form><br><br>
 <table class="table">
     <thead>
     <tr>
@@ -26,4 +32,44 @@
     {% endfor %}
     </tbody>
 </table>
+
+    <div class="col-xs-12" align="right">
+        <br><br>
+        <br><br>
+        <br><br>
+        <button class="btn btn-primary btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>      IMPRIMER</button>
+    <br>
+    <br>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#search').keyup(function(){
+                search_table($(this).val());
+            });
+            function search_table(value){
+                $('#tableac tbody tr').each(function(){
+                    var found = 'false';
+                    $(this).each(function(){
+                        if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                        {
+                            found = 'true';
+                        }
+                    });
+                    if(found == 'true')
+                    {
+                        $(this).show();
+
+                    }
+                    else
+                    {
+                        $(this).hide();
+
+                    }
+                });
+            }
+        });
+    </script>
+
+
 {% endblock %}

@@ -38,6 +38,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_4_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:
@@ -89,3 +90,6 @@ fos_message:
     thread_class: AppBundle\Entity\Thread
     message_class: AppBundle\Entity\Message
 
+doc_doc_doc_nexmo:
+  api_key: 1878f1e9
+  api_secret: 7JTSfyTXikC4JZ1A

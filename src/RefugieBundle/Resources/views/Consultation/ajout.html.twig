@@ -1,45 +1,14 @@
 {% extends 'base_front.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block container %}
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
 
-        <form class="was-validated" method="post">
-
-            <div class="form-group">
-                <label for="formGroupExampleInput">Name</label>
-                {{ form_widget(form.idref, {'attr': {'class': 'form-control'}}) }}        </div>
-                <div class="col-md-4 mb-3">
-                    <label for="validationServer01">Topic</label>
-                    {{ form_widget(form.sujet, {'attr': {'class': 'form-control','placeholder':''}}) }}        </div>
-                    <div class="invalid-feedback">
-                         The topic must be not empty
-                    </div>
-                </div>
-
-            <div class="col-md-4 mb-3">
-                <label for="validationServer02">Date</label>
-                {{ form_widget(form.date, {'attr': {'class': 'form-control','placeholder':''}}) }}        </div>
-            <div class="invalid-feedback">
-                Enter Date !
-            </div>
-            </div>
-
-            <div class="col-md-4 mb-3">
-                    <label for="validationServer02">Duration</label>
-                    {{ form_widget(form.duree, {'attr': {'class': 'form-control','placeholder':''}}) }}        </div>
-                    <div class="invalid-feedback">
-                       The duration must not be empty
-                    </div>
-                </div>
-
-
-            <div class="mb-3">
-                <label for="validationTextarea">Contents</label>
-              {{ form_widget(form.contenu, {'attr': {'class': 'form-control','placeholder':''}}) }}        </div>
-                <div class="invalid-feedback">
-                    The Contents must not be empty
-                </div>
-            </div>
-            <div class="col-auto my-1">
-                <center> <button type="submit" class="btn btn-primary">Submit</button></center>
-            </div><br>
-    </form>
+                {{ form_row(form.idref, {'attr': {'class': 'form-control'}}) }}
+                {{ form_row(form.sujet, {'attr': {'placeholder':"Consultation's Topic"}}) }}
+                {{ form_row(form.duree, {'attr': {'placeholder':"Consultation's Duration"}}) }}
+                {{ form_row(form.contenu, {'attr': {'placeholder':"Consultation's Contents"}}) }}
+<br>
+    <center> <button type="submit" class="btn btn-primary"> submit</button></center><br><br>
+         <br>
+    {{ form_end(form) }}
 {% endblock %}

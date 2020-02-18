@@ -3,6 +3,9 @@
 
 namespace RefugieBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert ;
+
+
 /**
  * @ORM\Entity
  *
@@ -17,18 +20,26 @@ class RefConsult
     public $id;
     /**
      * @ORM\Column(type="string",length=255)
+     * @Assert\Length(min="3",max="50",minMessage="Please enter at least 3 characters",maxMessage="Topic is too long")
+     * @Assert\NotBlank(message="please fill in the field")
+     * @Assert\Regex(
+     *     pattern     = "/^[a-z]+$/i",
+     *     htmlPattern = "^[a-zA-Z]+$",message="Special characters prohibited")
      */
     private $sujet;
     /**
      * @ORM\Column(type="string",length=255)
+     * @Assert\NotBlank(message="please fill in the field")
      */
     private $contenu;
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
+     * @Assert\NotBlank(message="please fill in the field")
      */
     private $date;
     /**
-     * @ORM\Column(type="string",length=255)
+     * @ORM\Column(type="time")
+     * @Assert\NotBlank(message="please fill in the field")
      */
     private $duree;
 
@@ -53,9 +64,6 @@ class RefConsult
     {
         $this->idref = $idref;
     }
-
-
-
 
 
     /**
@@ -137,5 +145,7 @@ class RefConsult
     {
         $this->duree = $duree;
     }
+
+
 
 }

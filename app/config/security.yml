@@ -5,9 +5,10 @@ security:
 
     role_hierarchy:
         ROLE_CLIENT: ROLE_USER
-        ROLE_AGENT:       ROLE_USER
+        ROLE_AGENT:       ROLE_ADMIN
         ROLE_SUPER_ADMIN: ROLE_ADMIN
-
+        ROLE_Docteur: ROLE_USER
+        ROLE_RespCamp: ROLE_USER
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
