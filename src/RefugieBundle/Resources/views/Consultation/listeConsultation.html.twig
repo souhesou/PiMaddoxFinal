@@ -1,10 +1,8 @@
 {% extends 'base_front.html.twig' %}
 {% block container %}
-    <div class="active-pink-3 active-pink-4 mb-4">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <input type="text" id="myInput" onkeyup="search()" placeholder="Search .." title="Type in a name"><br><br>
 
-    </div>
-<center></center><table class="table">
+    <table class="table" id="example">
     <thead>
     <tr>
         <th>Name</th>
@@ -18,7 +16,7 @@
     </thead>
     <tbody>
     {% for const in consultation %}
-    <tr>
+    <tr id="souhe">
         <td>{{ const.idref.nom }}</td>
         <td>{{ const.sujet }}</td>
         <td>{{ const.contenu }}</td>
@@ -38,4 +36,17 @@
         <br>
         <br>
     </div>
+
+    <script>
+        function search() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#example #souhe").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        }
+    </script>
+
+
 {% endblock %}
