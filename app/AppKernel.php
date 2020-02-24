@@ -20,10 +20,16 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new GcampBundle\GcampBundle(),
+            new PBundle\PBundle(),
+            new volontaireBundle\volontaireBundle(),
             new UserBundle\UserBundle(),
             new RefugieBundle\RefugieBundle(),
             new DocDocDoc\NexmoBundle\DocDocDocNexmoBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new ForumBundle\ForumBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

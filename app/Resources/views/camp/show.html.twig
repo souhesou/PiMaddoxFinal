@@ -2,37 +2,50 @@
 
 {% block container %}
     <center>
-    <h1>Camp</h1>
+        <section id="main-content">
+    <h1>Details</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ camp.id }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ camp.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Capacite</th>
-                <td>{{ camp.capacite }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table table-striped table-advance table-hover">
+            <hr>
+<thead>
+<a class="btn btn-round btn-default"  href="{{ path('camp_index') }}"><i class="fa fa-chevron-circle-left"></i></a>
 
-        <ul class="sub">
-        <li class="active">
-            <a href="{{ path('camp_index') }}">Back to the list</a>
-        </li>
-        <li class="active">
-            <a href="{{ path('camp_edit', { 'id': camp.id }) }}">Edit</a>
-        </li>
-        <li class="active">
-            {{ form_start(delete_form) }}
-                <input type="submit"  class="btn btn-theme" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+<a  class="btn btn-round btn-info" href="{{ path('camp_pdf', { 'id': camp.id }) }}"><i class="fa fa-cloud-download"></i></a></button>
+
+<a class="btn btn-round btn-warning" href="{{ path('camp_edit', { 'id': camp.id }) }}"><i class="fa fa-pencil"></i></a>
+
+
+{{ form_start(delete_form) }}
+<button class="btn btn-round btn-danger" type="submit" > <i class="fa fa-trash-o"></i>   </button>
+{{ form_end(delete_form) }}
+<br>
+<br>
+<br>
+</thead>
+            <tbody>
+            <tr>
+                <th><span class="badge bg-primary">Numero </th>
+                <td class="hidden-phone"><span class="badge bg-success">{{ camp.id }}</td>
+            </tr>
+            <tr>
+                <th ><span class="badge bg-primary">Capacite</th>
+                <td ><span class="badge bg-success">{{ camp.capacite }}</td>
+            </tr>
+            <tr>
+                <th class="hidden-phone"><span class="badge bg-primary">Lieu</th>
+                <td><span class="badge bg-success">{{ camp.lieu.lieu }}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
     </center>
 {% endblock %}

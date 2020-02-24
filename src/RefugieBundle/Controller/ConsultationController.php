@@ -26,7 +26,7 @@ class ConsultationController extends Controller
 
                 $em->persist($refugie);
                 $em->flush();
-                $message = new Simple("Hand2Hold", "21623334418", "Bonjour Mr. le responsable camps! A cet instant une consultation s'est déroulé dans le camp .. ");
+                $message = new Simple("Heart2Hold", "21623334418", "Bonjour Mr. le responsable ! A cet instant une consultation s'est déroulé dans votre camp .. ");
                 $nexmoResponse = $this->container->get('doc_doc_doc_nexmo')->send($message);
                 return $this->redirectToRoute('affiche_Consultation');
             }

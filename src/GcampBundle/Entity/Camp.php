@@ -1,7 +1,7 @@
 <?php
 
 namespace GcampBundle\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,23 +12,30 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Camp
 {
+
     /**
      * @var int
      * @ORM\Column(name="Id",type="integer")
      *@ORM\Id
      *@ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     private $id;
 
     /**
-     * @var string
+     *@ORM\ManyToOne(targetEntity="Cord")
+     *@ORM\JoinColumn(name="lieu", referencedColumnName="id")
      *
-     * @ORM\Column(name="lieu", type="string", length=255)
      */
     private $lieu;
 
     /**
      * @var int
+     *
+     * * @Assert\GreaterThan(
+     *     value=10,
+     *     message="la capacité doit etre supérieur à 10"
+     *     )
      *
      * @ORM\Column(name="capacite", type="integer")
      */
@@ -48,7 +55,7 @@ class Camp
     /**
      * Set lieu
      *
-     * @param string $lieu
+     * @param integer $lieu
      *
      * @return Camp
      */
@@ -62,7 +69,7 @@ class Camp
     /**
      * Get lieu
      *
-     * @return string
+     * @return int
      */
     public function getLieu()
     {

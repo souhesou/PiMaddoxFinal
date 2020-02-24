@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+
+<div class="form-panel">
+    <br>
+    <br>
+    <br>
+    <center>
+    <h1>Affectation creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-theme" type="submit" value="Create" />
+    {{ form_end(form) }}
+
+
+{% endblock %}

@@ -16,7 +16,7 @@ class RefugieType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('age')->add('origine')->add('idcamp',EntityType::class,array('class'=>'GcampBundle:Camp','choice_label'=>'lieu','multiple'=>false));
+        $builder->add('nom')->add('prenom')->add('age')->add('origine')->add('idcamp',EntityType::class,array('class'=>'GcampBundle:Camp','choice_label'=>'lieu.lieu','multiple'=>false));
     }/**
      * {@inheritdoc}
      */

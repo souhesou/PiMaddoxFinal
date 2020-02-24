@@ -2,42 +2,60 @@
 
 {% block container %}
     <center>
-    <h1>Besoins list</h1>
+        <section id="main-content">
 
-    <table>
+
+            <h1>Liste des besoins</h1>
+
+            <table class="table table-striped table-advance table-hover">
+                <hr>
+
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nombs</th>
-                <th>Quantite</th>
-                <th>Actions</th>
+                <th ><span class="badge bg-default">Numéro</th>
+                <th ><span class="badge bg-default">lieu</th>
+                <th> <span class="badge bg-default">Catégorie</th>
+                <th><span class="badge bg-default">Quantitée</th>
+
+
             </tr>
         </thead>
         <tbody>
-        {% for besoin in besoins %}
-            <tr>
-                <td><a href="{{ path('besoins_show', { 'id': besoin.id }) }}">{{ besoin.id }}</a></td>
-                <td>{{ besoin.nomBs }}</td>
-                <td>{{ besoin.quantite }}</td>
+                {% for besoin in besoins %}
+            <li>
+                <td> <a href="{{ path('besoins_show', { 'id': besoin.id }) }}">{{ besoin.id }}</a></td>
+                <td><span class="label label-info label-warning">{{ besoin.id_c.lieu.lieu }}</td>
+                <td class="hidden-phone"> <span class="label label-success">{{ besoin.nomBs }}</td>
+                <td ><span class="label label-info label-mini">{{ besoin.quantite }}</td>
+
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('besoins_show', { 'id': besoin.id }) }}">show</a>
+                            <i class="fa fa-plus"></i> <a href="{{ path('besoins_show', { 'id': besoin.id }) }}">details</a>
                         </li>
                         <li>
-                            <a href="{{ path('besoins_edit', { 'id': besoin.id }) }}">edit</a>
+                            <a class="btn btn-round btn-theme04"  href="{{ path('besoins_edit', { 'id': besoin.id }) }}"><i  class="fa fa-pencil"></i></a>
                         </li>
+
                     </ul>
-                </td>
+
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+            <div class="navigation">
+                {{ knp_pagination_render(besoins) }}
+            </div>
     <ul>
         <li>
-            <a href="{{ path('besoins_new') }}">Create a new besoin</a>
+            <a class="btn btn-primary btn-lg btn-block" href="{{ path('besoins_new') }}">Ajouter un besoin</a>
+        </li>
+        <li>
+            <a class="btn btn-default btn-lg btn-block" href="{{ path('besoins_pdfall') }}">Importer en pdf</a>
+
         </li>
     </ul>
+
+
     </center>
 {% endblock %}

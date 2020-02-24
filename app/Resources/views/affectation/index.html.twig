@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+<center>
+    <section id="main-content">
+
+
+        <h1>Liste des besoins</h1>
+
+        <table class="table table-striped table-advance table-hover">
+            <hr>
+        <thead>
+            <tr>
+                <th><span class="badge bg-default">Numéro</th>
+                <th><span class="badge bg-default">Quantité</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for affectation in affectations %}
+            <tr>
+                <td><span class="label label-info label-mini"><a href="{{ path('affectation_show', { 'id': affectation.id }) }}">{{ affectation.id }}</a></td>
+                <td><span class="label label-info label-warning">{{ affectation.qnt }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <i class="fa fa-plus"></i> <a href="{{ path('affectation_show', { 'id': affectation.id }) }}">details</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-round btn-theme04" href="{{ path('affectation_edit', { 'id': affectation.id }) }}"><i  class="fa fa-pencil"></i>Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('affectation_new') }}">Create a new affectation</a>
+        </li>
+    </ul>
+{% endblock %}

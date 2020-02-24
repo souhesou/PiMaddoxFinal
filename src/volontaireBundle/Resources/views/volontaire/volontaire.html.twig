@@ -1,0 +1,57 @@
+{% extends('base.html.twig') %}
+  {% block container %}
+      <center >
+
+          <style>
+
+
+
+              #tt{
+                  background-color:indianred;
+                  color:white;
+                  height: 40px;
+                  width: 40px;
+              }
+
+
+          </style>
+
+
+
+          <ul>
+              <div id="det">
+                  <table border="2" class="table">
+                      <thead>
+                      <th  id="tt">nom  </th>
+                      <th id="tt"><strong>prenom </strong></th>
+                      <th id="tt">cin </th>
+                      <th id="tt"> numero </th>
+                      <th id="tt">email  </th>
+                      <th id="tt">Role  </th>
+                      <th id="tt"> Modifier </th>
+                      <th id="tt"> supprimer</th>
+                      </thead>
+                      <tbody>
+                      {% for c in volontaire %}
+                      <tr scope="row">
+                          <td> {{ c.nom  }} </td>
+                          <td>  {{ c.prenom  }} </td>
+
+
+                          <td>  {{ c.cin  }}  </td>
+                          <td>  {{ c.numero }}  </td>
+                          <td>  {{ c.email }}  </td>
+                          <td>  {{ c.role }}  </td>
+
+                          {% endfor %}
+                      </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+          </ul>
+      </center>
+
+
+
+  {% endblock %}

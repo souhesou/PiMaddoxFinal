@@ -2,6 +2,7 @@
 
 namespace GcampBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,7 +15,7 @@ class BesoinsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom_bs', ChoiceType::class, [
+        $builder->add('id_c',EntityType::class,array('class'=>'GcampBundle:Camp','choice_label'=>'lieu.lieu','multiple'=>false))->add('nom_bs', ChoiceType::class, [
             'choices'  => [
                 'vetements' => 'vetements',
                 'aliments' => 'aliments',
@@ -22,12 +23,12 @@ class BesoinsType extends AbstractType
                 'Produits hygiène' => 'Produits hygiène',
                 'sang' => 'sang',
                 'argents' => 'argents',
-                'argents' => 'argents',
+
             ],
         ])->add('quantite');
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

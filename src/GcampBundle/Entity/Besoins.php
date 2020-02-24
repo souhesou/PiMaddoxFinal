@@ -115,5 +115,17 @@ class Besoins
         $this->id_c = $id_c;
     }
 
+    public function getId_c()
+    {
+        return $this->id_c;
+    }
+
+    /**
+     * @param mixed $id_c
+     */
+    public function setId_C($id_c)
+    {
+        $this->id_c = $id_c;
+    }
 }
 

@@ -1,0 +1,62 @@
+
+
+{% block container %}
+    <center>
+<div class="row mt">
+    <div class="col-md-12">
+        <div class="content-panel">
+            <h1><i class="fa fa-angle-right">Camp </h1>
+            <br>
+            <br>
+            <br>
+
+            <table class="table table-striped table-advance table-hover">
+    <table>
+        <thead>
+        <tr>
+            <th>Numero</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Lieu</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Capacite</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td><a href="{{ path('camp_show', { 'id': camp.id }) }}">{{ camp.id }}</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>{{ camp.lieu.lieu }}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+            <td>{{ camp.capacite }}</td>
+            <td>
+
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+</div>
+    </center>
+{% endblock %}

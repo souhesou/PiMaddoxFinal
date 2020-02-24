@@ -2,6 +2,7 @@
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% block container %}
 
+    <div class="container">
 
     {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
     {{ form_row(form.nom,{'attr':{'placeholder':"Refugee's Name"}}) }}
@@ -11,4 +12,6 @@
     {{ form_row(form.idcamp, {'attr': {'placeholder':'Refuges camp'}}) }}
     <center> <button type="submit" class="btn btn-primary"> submit</button></center><br><br>
     {{ form_end(form) }}
+        </div>
+
 {% endblock %}

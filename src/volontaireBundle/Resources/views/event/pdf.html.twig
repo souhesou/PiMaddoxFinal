@@ -1,0 +1,163 @@
+
+{% block container %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+
+
+
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('front/cssrecherche.css') }}">
+    </head>
+    <body>
+
+
+    <style>
+
+        .table>tbody>tr>td{
+            padding: 12px 8px;
+            vertical-align: middle;
+            border-color: #ddd;
+            font-weight: 300;
+            font-size:14px;
+            color: #3c4858;
+        }
+
+
+
+
+        .searchbar{
+            margin-bottom: auto;
+            margin-top: auto;
+            height: 60px;
+            background-color: #353b48;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        .search_input{
+            color: white;
+            border: 0;
+            outline: 0;
+            background: none;
+            width: 0;
+            caret-color:transparent;
+            line-height: 40px;
+            transition: width 0.4s linear;
+        }
+
+        .searchbar:hover > .search_input{
+            padding: 0 10px;
+            width: 450px;
+            caret-color:red;
+            transition: width 0.4s linear;
+        }
+
+        .searchbar:hover > .search_icon{
+            background: white;
+            color: #e74c3c;
+        }
+
+        .search_icon{
+            height: 40px;
+            width: 40px;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color:white;
+            text-decoration:none;
+        }
+
+
+    </style>
+    <div class="container">
+        <div class="title">
+            <h3>Tables</h3>
+        </div>
+        <div class="row">
+
+
+
+
+
+
+
+
+
+
+            <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th  id="tt"><strong>id  </strong></th>
+                            <th id="tt"><strong>titre  </strong></th>
+                            <th id="tt"><strong>date  </strong></th>
+                            <th id="tt"><strong> affiche  </strong></th>
+                            <th id="tt"><strong>prix   </strong></th>
+                            <th id="tt"><strong>description </strong></th>
+                            <th id="tt"><strong>lieu </strong></th>
+                            <th id="tt"><strong>Partenaire </strong></th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for c in event  %}
+                            <tr scope="row">
+                                <td> {{ c.id }} </td>
+                                <td>  {{ c.titre  }} </td>
+                                <td>  {{ c.date | date }}  </td>
+                                <td>   <img src="{{ asset('images/'~c.affiche) }}" class="img-radius" alt="User-Profile-Image" style="width:120px ; height: 150px" ></td>
+                                <td>  {{ c.prix  }}  </td>
+                                <td>  {{ c.description  }}  </td>
+                                <td>  {{ c.lieu  }}  </td>
+
+                                {% if c.partenaire !=null %}
+                                    <td> {{ c.partenaire.nom }}</td>
+                                {% else  %}
+                                    <td> </td>
+                                {% endif %}
+
+
+                            </tr>
+
+
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+    </body>
+{% endblock %}

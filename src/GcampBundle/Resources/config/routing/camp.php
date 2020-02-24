@@ -24,6 +24,35 @@ $collection->add('camp_show', new Route(
     array(),
     array('GET')
 ));
+$collection->add('camp_map', new Route(
+    '/{id}/map',
+    array('_controller' => 'GcampBundle:Camp:map'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
+));
+$collection->add('camp_local', new Route(
+    '/{id}/local',
+    array('_controller' => 'GcampBundle:Camp:local'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
+));
+
+$collection->add('camp_pdf', new Route(
+    '/{id}/pdf',
+    array('_controller' => 'GcampBundle:Camp:pdf'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
+));
+
 
 $collection->add('camp_new', new Route(
     '/new',

@@ -3,8 +3,11 @@
 namespace GcampBundle\Controller;
 
 use GcampBundle\Entity\Camp;
+use GcampBundle\Entity\Cord;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Camp controller.
@@ -121,4 +124,53 @@ class CampController extends Controller
             ->getForm()
         ;
     }
+
+    public function pdfAction(Request $request , Camp $camp)
+    {
+        $snappy = $this->get("knp_snappy.pdf");
+
+        $html = $this->renderView("camp/pdf.html.twig", array(
+            "title" => "Awesome PDF Title",
+            'camp'=>$camp
+        ));
+
+        $filename = "resultat";
+
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="'.$filename.'.pdf"',
+            )
+        );
+
+    }
+    public function mapAction(Camp $camp,$id)
+    {
+        $deleteForm = $this->createDeleteForm($camp);
+
+
+
+        $coord = $this->getDoctrine()->getRepository(Cord::class)->latt($id);
+        return $this->render('camp/map.html.twig', array(
+            'coord' => $coord,
+            'delete_form' =>$deleteForm,
+
+        ));
+    }
+    public function localAction(Camp $camp,$id)
+    {
+        $deleteForm = $this->createDeleteForm($camp);
+
+
+
+        $coord = $this->getDoctrine()->getRepository(Cord::class)->latt($id);
+        return $this->render('camp/map.html.twig', array(
+            'coord' => $coord,
+            'delete_form' =>$deleteForm,
+
+        ));
+    }
+
 }

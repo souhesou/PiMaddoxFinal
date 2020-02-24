@@ -45,6 +45,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
                                 <a class="dropdown-item" href="{{ path('affiche_Refugie') }}">List of Refugees</a>
                                 <a class="dropdown-item" href="{{ path('ajout_Refugie') }}">Add Refugee</a>
+                                <a class="dropdown-item" href="{{ path('besoins_show1') }}">Besoins</a>
 
                             </div>
                         </li>
@@ -59,10 +60,10 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="events.html">Events</a>
+                            <a class="nav-link" href="{{ path('volontaireevents') }}">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="dons.html">Dons</a>
+                            <a class="nav-link" href="{{ path('volontaireajoutdon') }}">Dons</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>

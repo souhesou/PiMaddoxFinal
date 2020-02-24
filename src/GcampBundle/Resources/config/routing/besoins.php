@@ -2,7 +2,6 @@
 
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
-
 $collection = new RouteCollection();
 
 $collection->add('besoins_index', new Route(
@@ -53,6 +52,24 @@ $collection->add('besoins_delete', new Route(
     '',
     array(),
     array('DELETE')
+));
+$collection->add('besoins_show1', new Route(
+    '/show1',
+    array('_controller' => 'GcampBundle:Besoins:show1'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
+));
+$collection->add('besoins_pdfall', new Route(
+    '/pdfall',
+    array('_controller' => 'GcampBundle:Besoins:pdfall'),
+    array(),
+    array(),
+    '',
+    array(),
+    array('GET')
 ));
 
 return $collection;

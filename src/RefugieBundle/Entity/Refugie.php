@@ -38,6 +38,12 @@ class Refugie
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="please fill in the field")
+     * @Assert\Range(
+     *      min = 0,
+     *      max = 100,
+     *      minMessage = "Negative age",
+     *      maxMessage = "Error Age"
+     * )
      */
     private $age;
     /**

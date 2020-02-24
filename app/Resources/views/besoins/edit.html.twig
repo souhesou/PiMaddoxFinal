@@ -1,23 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block container %}
+<div class="form-panel">
+    <br>
+    <br>
+    <br>
     <center>
-    <h1>Besoin edit</h1>
+    <h1>Modifier un besoin</h1>
 
+        <br>
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <br>
+        <input class= "btn btn-round btn-warning" type="submit" value="Modifier" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('besoins_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+       <br>
+        {{ form_start(delete_form) }}
+        <button class="btn btn-round btn-danger" type="submit" > <i class="fa fa-trash-o"></i>supprimer</button>
+        {{ form_end(delete_form) }}
+<br>
+        <a class="btn btn-round btn-info"  href="{{ path('besoins_index') }}"><i class="fa fa-chevron-circle-left"></i> liste besoins</a>
+    </div>
+        <br>
+        <br>
+
+
     </center>
 {% endblock %}

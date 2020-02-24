@@ -1,0 +1,10 @@
+forum_post:
+    resource: "@ForumBundle/Resources/config/routing/post.php"
+    prefix:   /post
+
+forum_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+forum_cass:
+    resource: "@ForumBundle/Resources/config/routing/cassociale.php"
+    prefix:   /sociale

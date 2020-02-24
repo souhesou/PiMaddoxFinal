@@ -1,41 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block container %}
-    <h1>Camps list</h1>
+<center>
+    <section id="main-content">
 
-    <table>
+
+        <h1>Liste des camps</h1>
+
+    <table class="table table-striped table-advance table-hover">
+    <hr>
+
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Lieu</th>
-                <th>Capacite</th>
-                <th>Actions</th>
+
+                <th><span class="badge bg-default"> Numéro</th>
+                <th><span class="badge bg-default">Lieu</th>
+                <th><span class="badge bg-default">
+                        Capacité</th>
+
+
             </tr>
         </thead>
         <tbody>
         {% for camp in camps %}
             <tr>
                 <td><a href="{{ path('camp_show', { 'id': camp.id }) }}">{{ camp.id }}</a></td>
-                <td>{{ camp.lieu }}</td>
-                <td>{{ camp.capacite }}</td>
+                <td class="hidden-phone"><span class="label label-success">{{ camp.lieu.lieu}}</td>
+                <td><span class="label label-info label-default">{{ camp.capacite }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('camp_show', { 'id': camp.id }) }}">show</a>
-                        </li>
+                            <i class="fa fa-plus"></i><a href="{{ path('camp_show', { 'id': camp.id }) }}">details</a></li>
                         <li>
-                            <a href="{{ path('camp_edit', { 'id': camp.id }) }}">edit</a>
+                            <a class="btn btn-theme04" href="{{ path('camp_edit', { 'id': camp.id }) }}"><i  class="fa fa-pencil"></i></a>
                         </li>
                     </ul>
                 </td>
             </tr>
+
         {% endfor %}
         </tbody>
     </table>
 
+    </center>
+
+    </section>
     <ul>
         <li>
-            <a href="{{ path('camp_new') }}">Create a new camp</a>
+            <a class="btn btn-primary btn-lg btn-block" href="{{ path('camp_new') }}">Créer un nouveau camp</a>
         </li>
     </ul>
+<br>
+
 {% endblock %}

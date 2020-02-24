@@ -1,0 +1,6 @@
+p_homepage:
+    path:     /
+    defaults: { _controller: PBundle:Default:index }
+ajax_search:
+    path:     /search
+    defaults: { _controller: PBundle:Partenaire:search }

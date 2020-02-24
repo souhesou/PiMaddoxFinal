@@ -1,22 +1,32 @@
-{% extends 'base.html.twig' %}
 
+
+{% extends 'base.html.twig' %}
 {% block container %}
 
         <div class="form-panel">
+<br>
+            <br>
+            <br>
+
             <center>
-    <h1>Camp creation</h1>
+    <h1>Créer un camp</h1>
+                <br>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" class="btn btn-theme" value="Create" />
+                <br>
+                <br>
+        <input type="submit" class="btn btn-theme" value="valider" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('camp_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+                <br>
+                <br>
+                <br>
+
+
             </center>
         </div>
+
 
 {% endblock %}

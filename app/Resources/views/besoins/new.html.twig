@@ -1,18 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block container %}
-    <center>
-    <h1>Besoin creation</h1>
 
+        <div class="form-panel">
+            <br>
+            <br>
+            <br>
+            <center>
+
+            <h1>Ajouter Besoins</h1>
+            <br>
     {{ form_start(form) }}
+
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+            <br>
+        <input class="btn btn-theme" type="submit" value="valider" />
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('besoins_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+
+        <br>
+        <br>
+
+        </div>
     </center>
+
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+
+            if (x == "") {
+                alert("le nom ne doit pas être vide");
+                return false;
+            }
+
+
+        }
+    </script>
 {% endblock %}

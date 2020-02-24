@@ -7,7 +7,7 @@
         <meta name="author" content="Dashboard">
         <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
         <title>Dashio - Bootstrap Admin Template</title>
-
+        <link href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
         <!-- Favicons -->
         <link href="{{ asset('img/favicon.png') }}" rel="icon">
         <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -22,6 +22,10 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style-responsive.css') }}" rel="stylesheet">
         <script src="{{ asset('lib/chart-master/Chart.js') }}"></script>
+
+
+
+
     </head>
 
     <body>
@@ -250,13 +254,10 @@
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-desktop"></i>
-                                <span>Action des donss</span>
+                                <span>Gestion des dons  </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">General</a></li>
-                                <li><a href="#">Buttons</a></li>
-                                <li><a href="#">Panels</a></li>
-                                <li><a href="#">Font Awesome</a></li>
+                                <li><a href="{{ path('volontaireaffichedon') }}">Afficher les dons </a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -265,30 +266,22 @@
                                 <span>Les Camps </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">Grids</a></li>
-                                <li><a href="#">Calendar</a></li>
-                                <li><a href="#">Gallery</a></li>
-                                <li><a href="#">Todo List</a></li>
-                                <li><a href="#">Dropzone File Upload</a></li>
-                                <li><a href="#">Inline Editor</a></li>
-                                <li><a href="#">Multiple File Upload</a></li>
+                                <li><a href="{{ path('camp_new') }}">Ajouter camp</a></li>
+                                <li><a href="{{ path('camp_index') }}">afficher camp</a></li>
+                                <li><a href="{{ path('besoins_new') }}">Ajouter Besoin</a></li>
+                                <li><a href="{{ path('besoins_index') }}">afficher Besoin</a></li>
+                                <li><a href="{{ path('affectation_new') }}">affecter Don</a></li>
+                                <li><a href="{{ path('affectation_index') }}">Don afféctés</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span>Volontaires</span>
+                                <i class="fa fa-desktop"></i>
+                                <span>Gestion des volontaires </span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">Blank Page</a></li>
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Lock Screen</a></li>
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Invoice</a></li>
-                                <li><a href="#">Pricing Table</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">404 Error</a></li>
-                                <li><a href="#">500 Error</a></li>
+                                <li><a href="{{ path('volontaireajoutvolontaire') }}">Ajouter volontaire </a></li>
+                                <li><a href="{{ path('volontaireaffichevolontaire') }}">Afficher Volontaire</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -302,6 +295,20 @@
                                 <li><a href="{{ path('affiche_ConsultationBack') }}">Patient List</a></li>
                             </ul>
                         </li>
+
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-desktop"></i>
+                                <span>Gestion des événements  </span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{ path('volontaireajoutevent') }}">Ajouter un  événement  </a></li>
+                                <li><a href="{{ path('volontaireafficheevent') }}">Afficher les  événements</a></li>
+                                <li><a href="{{ path('volontaireStatistique') }}"> Statistique des événements </a></li>
+                            </ul>
+                        </li>
+
+
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-th"></i>
@@ -375,6 +382,20 @@
         {% endblock %}
 
     {% block js %}
+
+        <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
+        <!--------------->
+
+
+        <script src="{{ asset('lib/DataTable/jquery.dataTables.min.js') }}"></script>
+
+
+        <script>$(document).ready( function () {
+                $('#myTable').DataTable();
+            } );</script>
+
+
+
         <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
 
         <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -393,7 +414,7 @@
             $(document).ready(function() {
                 var unique_id = $.gritter.add({
                     // (string | mandatory) the heading of the notification
-                    title: 'Welcome to Dashio!',
+                    title: 'Welcome to Heart2Hold!',
                     // (string | mandatory) the text inside the notification
                     text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
                     // (string | optional) the image to display on the left

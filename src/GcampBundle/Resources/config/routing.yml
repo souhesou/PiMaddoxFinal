@@ -2,7 +2,16 @@ gcamp_camp:
     resource: "@GcampBundle/Resources/config/routing/camp.php"
     prefix:   /camp
 
+gcamp_homepage:
+    path:     /
+    defaults: { _controller: GcampBundle:Default:index }
 
 gcamp_besoins:
     resource: "@GcampBundle/Resources/config/routing/besoins.php"
     prefix:   /besoins
+gcampfront:
+    path:     /front
+    defaults: { _controller: GcampBundle:Default:front }
+gcamp_affectation:
+    resource: "@GcampBundle/Resources/config/routing/affectation.php"
+    prefix:   /aff

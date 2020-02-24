@@ -1,0 +1,84 @@
+volontaire_homepage:
+    path:     /
+    defaults: { _controller: volontaireBundle:Default:index }
+volontaireajoutvolontaire:
+    path:     /ajoutvolontaire
+    defaults: { _controller: volontaireBundle:volontaire:ajoutvolontaire }
+volontaireaffichevolontaire:
+    path:     /affichevolontaire
+    defaults: { _controller: volontaireBundle:volontaire:affichevolontaire }
+volontairesupprimervololentaire:
+    path:     /supprimervololentaire/{cin}
+    defaults: { _controller: volontaireBundle:volontaire:supprimervololentaire }
+volontaireupdatevolontaire:
+    path:     /updatevolontaire/{cin}
+    defaults: { _controller: volontaireBundle:volontaire:updatevolontaire }
+volontaireajoutevent:
+    path:     /ajoutevent
+    defaults: { _controller: volontaireBundle:event:ajoutevent }
+volontaireafficheevent:
+    path:     /afficheevent
+    defaults: { _controller: volontaireBundle:event:afficheevent }
+volontairesupprimerevent:
+    path:     /supprimerevent/{id}
+    defaults: { _controller: volontaireBundle:event:supprimerevent }
+volontaireupdateevent:
+    path:     /updateevent/{id}
+    defaults: { _controller: volontaireBundle:event:updateevent }
+volontaireajoutdon:
+    path:     /ajoutdon
+    defaults: { _controller: volontaireBundle:don:ajoutdon }
+volontaireaffichedon:
+    path:     /affichedon
+    defaults: { _controller: volontaireBundle:don:affichedon }
+volontairesupprimerdon:
+    path:     /supprimerdon/{id}
+    defaults: { _controller: volontaireBundle:don:supprimerdon }
+volontaireupdatedon:
+    path:     /updatedon/{id}
+    defaults: { _controller: volontaireBundle:don:updatedon }
+volontaireevents:
+    path:     /events
+    defaults: { _controller: volontaireBundle:Default:events }
+volontairesingleevents:
+    path:     /singleevents/{id}
+    defaults: { _controller: volontaireBundle:Default:singleevents }
+volontairefront:
+    path:     /front
+    defaults: { _controller: volontaireBundle:Default:front }
+volontaireabout:
+    path:     /about
+    defaults: { _controller: volontaireBundle:Default:about }
+volontaireRecherche:
+    path:     /Recherche
+    defaults: { _controller: volontaireBundle:volontaire:Recherche }
+volontaireRecherchedon:
+    path:     /Recherchedon
+    defaults: { _controller: volontaireBundle:don:Recherchedon }
+volontaireRechercheevent:
+    path:     /Rechercheevent
+    defaults: { _controller: volontaireBundle:event:Rechercheevent }
+volontaireStatistique:
+    path:     /Statistique
+    defaults: { _controller: volontaireBundle:event:Statistique }
+volontairechartPie:
+    path:     /chartPie
+    defaults: { _controller: volontaireBundle:Graphe:chartPie }
+cal:
+    path:     /cal
+    defaults: { _controller: volontaireBundle:event:cal }
+volontairepdf:
+    path:     /pdf
+    defaults: { _controller: volontaireBundle:event:pdf }
+volontairepdfv:
+    path:     /pdfv
+    defaults: { _controller: volontaireBundle:volontaire:pdfv }
+volontaireStatistiquedon:
+    path:     /Statistiquedon
+    defaults: { _controller: volontaireBundle:don:Statistiquedon }
+volontairecomment:
+    path:     /comment{tit,id,cin}
+    defaults: { _controller: volontaireBundle:comment:comment }
+volontairejeu:
+    path:     /jeu
+    defaults: { _controller: volontaireBundle:Default:jeu }

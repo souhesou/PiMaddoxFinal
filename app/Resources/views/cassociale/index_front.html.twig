@@ -1,0 +1,70 @@
+{% extends 'base_front.html.twig' %}
+
+{% block container %}
+<link rel="stylesheet" href="{{ asset('front/css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/animate.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/owl.carousel.min.css') }}">
+
+<link rel="stylesheet" href="{{ asset('front/fonts/ionicons/css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/fonts/fontawesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/fonts/flaticon/font/flaticon.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/magnific-popup.css') }}">
+
+<!-- Theme Style -->
+<link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
+    <center>
+<section id="main-content">
+
+        <h1> <i class="fa fa-angle-right"></i>Liste de cas sociaux</h1>
+
+
+                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-advance table-hover" id="hidden-table-info">
+                        <thead>
+                        <tr>
+                            <th class="hidden-phone">Numéro</th>
+                            <th class="hidden-phone">Lieu</th>
+                            <th class="hidden-phone">Date</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cassociale in cassociales %}
+
+
+                            <tr class="gradeX">
+                                <td class="center hidden-phone"><i class="fa fa-angle-right"></i><a href="{{ path('sociale_show_front', { 'id': cassociale.id }) }}">{{ cassociale.id }}</a></td>
+                                <td class="center hidden-phone">{{ cassociale.lieu }}</td>
+                                <td class="center hidden-phone">{% if cassociale.date %}{{ cassociale.date|date('Y-m-d') }}{% endif %}</td>
+                                <td class="center hidden-phone">
+                                    <ul>
+
+                                            <a class="fa fa-plus-circle" href="{{ path('sociale_show_front', { 'id': cassociale.id }) }}">détails</a>
+<br>
+
+
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><a class="fa fa-edit" href="{{ path('sociale_new_front') }}">créer un cas social</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn-group">
+                        <ul>
+                            <div class="navigation">
+                                {{ knp_pagination_render(cassociales) }}
+                            </div>
+                        </ul>
+                    </div>
+
+
+</section>
+
+
+    </center>
+        {% endblock %}

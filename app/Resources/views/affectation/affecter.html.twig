@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+<div class="form-panel">
+    <br>
+    <br>
+    <br>
+    <center>
+    <h1>Affectation </h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Affecter" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('aff_index') }}">Back to the list</a>
+        </li>
+
+    </ul>
+{% endblock %}

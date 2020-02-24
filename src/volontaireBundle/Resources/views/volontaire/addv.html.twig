@@ -1,0 +1,11 @@
+{% extends('base.html.twig') %}
+  {% block container %}
+      <center >
+          <div style="background-color:lightblue">
+              <div class="container"   style="width: 300px"; >        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                  {# {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %} #}
+
+                  {{ form(form) }}
+              </div></div>
+      </center>
+  {% endblock %}

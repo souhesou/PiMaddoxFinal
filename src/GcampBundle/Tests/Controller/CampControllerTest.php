@@ -5,8 +5,7 @@ namespace GcampBundle\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CampControllerTest extends WebTestCase
-{
-    /*
+{ /*
     public function testCompleteScenario()
     {
         // Create a new client to browse the application

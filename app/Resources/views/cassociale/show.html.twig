@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center>
+    <h1><i class="fa fa-angle-right"></i>Cassociale</h1>
+
+        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-advance table-hover" id="hidden-table-info">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cassociale.id }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ cassociale.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if cassociale.date %}{{ cassociale.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sociale_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('sociale_edit', { 'id': cassociale.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </center>
+{% endblock %}

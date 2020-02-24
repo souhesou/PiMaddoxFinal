@@ -1,6 +1,8 @@
 {% extends 'base_front.html.twig' %}
 {% block container %}
+
     <input type="text" id="myInput" onkeyup="search()" placeholder="Search .." title="Type in a name"><br><br>
+    <div class="container">
 
     <table class="table" id="example">
     <thead>
@@ -28,6 +30,7 @@
     </tbody>
 </table></center>
 
+
     <div class="col-xs-12" align="right">
         <br><br>
         <br><br>
@@ -36,7 +39,7 @@
         <br>
         <br>
     </div>
-
+    </div>
     <script>
         function search() {
             $("#myInput").on("keyup", function() {
