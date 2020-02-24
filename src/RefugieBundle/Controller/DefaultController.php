@@ -24,4 +24,12 @@ class DefaultController extends Controller
 
         return $this->render('@Refugie/index.html.twig');
     }
+
+    public function aboutAction()
+    {
+
+        return $this->render('@Refugie/about.html.twig');
+    }
+
+
 }

@@ -130,4 +130,11 @@ class RefugieController extends Controller
     }
 
 
+    public function trieListeRefugieAction()
+    {
+        $repository=$this->getDoctrine()->getManager()->getRepository(Refugie::class);
+        $refug=$repository->trieListe();
+        return ($this->render('@Refugie/Refugie/trieListeRefugie.html.twig', array('refugie'=>$refug)));
+    }
+
 }

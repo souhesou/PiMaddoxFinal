@@ -1,0 +1,52 @@
+{% extends 'base_front.html.twig' %}
+{% block container %}
+
+    <input type="text" id="myInput" onkeyup="search()" placeholder="Search .." title="Type in a name"><br><br>
+    <div class="container">
+
+        <table id="example"class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>UserName</th>
+                <th>Age</th>
+                <th>Origin</th>
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for refug in refugie %}
+                <tr id="souhe">
+                    <td>{{ refug.nom }}</td>
+                    <td>{{ refug.prenom }}</td>
+                    <td>{{ refug.age }}</td>
+                    <td>{{ refug.origine }}</td>
+                    <td><a href="{{ path('modifier_Refugie',{'id':refug.id}) }}"><button class="btn btn-primary">Update</button></a> <a href="{{ path('supprimer_Refugie',{'id':refug.id}) }}"><button class="btn btn-primary">Delete</button></a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="col-xs-12" align="right">
+            <br><br>
+            <br><br>
+            <br><br>
+            <button class="btn btn-primary btn-icon-text" onclick="window.print();"><i class="mdi mdi-printer btn-icon-append"></i>      IMPRIMER</button>
+            <br>
+            <br>
+        </div>
+    </div>
+    <script>
+        function search() {
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#example #souhe").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        }
+    </script>
+
+
+{% endblock %}

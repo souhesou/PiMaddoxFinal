@@ -45,6 +45,10 @@ affiche_ConsultationBack:
     path:     /afficherBack
     defaults: { _controller: RefugieBundle:Consultation:afficheB}
 
+AboutFront:
+    path:     /about
+    defaults: { _controller: RefugieBundle:Default:about}
 
-
-
+trieListeRefugie:
+    path:     /listeRefg
+    defaults: { _controller: RefugieBundle:Refugie:trieListeRefugie}
