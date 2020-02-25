@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new GcampBundle\GcampBundle(),
-            new PBundle\PBundle(),
             new volontaireBundle\volontaireBundle(),
             new UserBundle\UserBundle(),
             new RefugieBundle\RefugieBundle(),
@@ -29,7 +28,9 @@ class AppKernel extends Kernel
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new ForumBundle\ForumBundle(),
-
+            new Discutea\DForumBundle\DForumBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new PBundle\PBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

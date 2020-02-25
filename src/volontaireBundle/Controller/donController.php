@@ -3,6 +3,7 @@
 namespace volontaireBundle\Controller;
 
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+use DocDocDoc\NexmoBundle\Message\Simple;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use volontaireBundle\Entity\don;
@@ -26,6 +27,8 @@ class donController extends Controller
             //   $don->uploadProfilePicture() ;
             $em->persist($don);
             $em->flush();
+            $message = new Simple("Heart2Hold", "21623334418", "Bonjour Mr. le responsable ! A cet instant un don s'est affecté à votre camp ");
+            $nexmoResponse = $this->container->get('doc_doc_doc_nexmo')->send($message);
             // return $this->redirectToRoute('volontaireaffichedon');
         }
         return $this->render("@volontaire/don/ajoutd.html.twig",array("form"=>$form->createView()));

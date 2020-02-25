@@ -21,4 +21,8 @@ class PartenaireRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('str', '%'.$str.'%')
             ->getResult();
     }
+    public function createFindAllQuery()
+    {
+        return $this->_em->getRepository('PBundle:Partenaire')->createQueryBuilder('p');
+    }
 }

@@ -1,48 +1,46 @@
 {% extends 'base_front.html.twig' %}
 
 {% block container %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
     <center>
         <section id="main-content">
-        <h1>Liste des besoins </h1>
+            <h1>Liste des besoins </h1>
 
-        <table class="table table-striped table-advance table-hover"  >
-            <thead>
-            <tr id="besoins">
-
-                <th>Categorie</th>
-                <th>Quantite</th>
-                <th>lieu</th>
-                <th>localisation</th>
-
-
-
-
-            </tr>
-            </thead>
-            <tbody id="myTable">
-            {% for besoin in besoins %}
+            <table class="table table-striped table-advance table-hover"  >
+                <thead>
                 <tr id="besoins">
 
-                    <td>{{ besoin.nomBs }}</td>
-                    <td>{{ besoin.quantite }}</td>
-                    <td>{{ besoin.id_c.lieu.lieu }}</td>
+                    <th>Categorie</th>
+                    <th>Quantite</th>
+                    <th>lieu</th>
+                    <th>localisation</th>
 
-                    <td>
-                        <a href="{{ path('camp_local', { 'id': besoin.id_c.id })  }}"><i class="fa fa-map-marker"></a>
-                    </td>
+
+
+
                 </tr>
+                </thead>
+                <tbody id="myTable">
+                {% for besoin in besoins %}
+                    <tr id="besoins">
 
-            {% endfor %}
-            </tbody>
-        </table>
+                        <td>{{ besoin.nomBs }}</td>
+                        <td>{{ besoin.quantite }}</td>
+                        <td>{{ besoin.id_c.lieu.lieu }}</td>
+
+                        <td>
+                            <a href="{{ path('camp_local', { 'id': besoin.id_c.id })  }}"><i class="fa fa-map-marker"></a>
+                        </td>
+                    </tr>
+
+                {% endfor %}
+                </tbody>
+            </table>
 
 
-        <div class="navigation">
-            {{ knp_pagination_render(besoins) }}
-        </div>
+            <div class="navigation">
+                {{ knp_pagination_render(besoins) }}
+            </div>
 
             <form class="navbar-form">
                 <th> <input type="text" id="myInput" placeholder="Rechercher  ..."></th>
@@ -55,7 +53,7 @@
 
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
             <script>
                 $(document).ready(function(){
                     $("#myInput").on("keyup", function() {
@@ -66,6 +64,7 @@
                     });
                 });
             </script>
+        </section>
 
     </center>
 {% endblock %}

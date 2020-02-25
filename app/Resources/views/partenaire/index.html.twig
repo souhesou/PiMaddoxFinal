@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <center><h1>Partenaires list</h1>
+<div>
+    <form action="" method="get">
+        <label for="filter">Filter</label>
+        <input name="filter"type="text">
+        <button type="submit"class="btn btn-default btn-sm">Filter</button>
+    </form>
+
+</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Domaine</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <div class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" id="search" class="form-control" placeholder="Search here">
+            </div>
+            <!-- /input-group -->
+        </div>
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="#"> Entities<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" id="entitiesNav">
+
+                </ul>
+            </li>
+        </ul><br><br><br><br>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                var searchRequest = null;
+                $("#search").keyup(function() {
+                    var minlength = 1;
+                    var that = this;
+                    var value = $(this).val();
+                    var entitySelector = $("#entitiesNav").html('');
+                    if (value.length >= minlength ) {
+                        if (searchRequest != null)
+                            searchRequest.abort();
+                        searchRequest = $.ajax({
+                            type: "GET",
+                            url: "{{ path('ajax_search') }}",
+                            data: {
+                                'q' : value
+                            },
+                            dataType: "text",
+                            success: function(msg){
+                                //we need to check if the value is the same
+                                if (value===$(that).val()) {
+                                    var result = JSON.parse(msg);
+                                    $.each(result, function(key, arr) {
+                                        $.each(arr, function(id, value) {
+                                            if (key === 'partenaire') {
+                                                if (id !== 'error') {
+                                                    console.log(value[1]);
+                                                    entitySelector.append('<li><b>'+value[1]+'</b><a href="/partenaire/' +
+                                                        {id}+id+'">'+'</a></li>');
+                                                } else {
+                                                    entitySelector.append('<li class="errorLi">'+value+'</li>');
+                                                }
+                                            }
+                                        });
+                                    });
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+        <tbody>
+        {% for partenaire in partenaire %}
+            <tr>
+                <td><a href="{{ path('partenaire_show', { 'id': partenaire.id }) }}">{{ partenaire.id }}</a></td>
+                <td>{{ partenaire.nom }}</td>
+                <td>{{ partenaire.adresse }}</td>
+                <td>{{ partenaire.domaine }}</td>
+                <td>{{ partenaire.type }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('partenaire_show', { 'id': partenaire.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('partenaire_edit', { 'id': partenaire.id }) }}">edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('partenaire_pdf', { 'id': partenaire.id }) }}">pdf</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('partenaire_new') }}">Create a new partenaire</a>
+        </li>
+    </ul>
+    </center>
+{% endblock %}

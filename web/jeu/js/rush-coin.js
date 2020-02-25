@@ -1,7 +1,7 @@
 var rush = rush || {};
 
 rush.Coin = (function(){
-  function Coin() {
+   function Coin() {
     this.initialize();
   }
   var p = Coin.prototype = new rush.GameObject();

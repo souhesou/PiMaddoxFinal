@@ -20,7 +20,7 @@ rush.Obstacle = (function(){
 
     // copy from zoe exported obstacle.json file.
     // frame: [x, y, width, height, imageIndex, regX, regY]
-    var spritesheetData = {"images": ["images/obstacle.png"], "frames": [[0, 0, 32, 16, 0, 0, 0], [32, 0, 32, 16, 0, 0, 0]], "animations": {"all": {"frames": [0, 1], frequency:5}}}
+    var spritesheetData = {"images": ["jeu/images/obstacle.png"], "frames": [[0, 0, 32, 16, 0, 0, 0], [32, 0, 32, 16, 0, 0, 0]], "animations": {"all": {"frames": [0, 1], frequency:5}}}
     var spritesheet = new createjs.SpriteSheet(spritesheetData);
     this.animation = new createjs.BitmapAnimation(spritesheet);
     this.animation.gotoAndPlay("all");

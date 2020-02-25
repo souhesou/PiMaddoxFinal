@@ -2,7 +2,7 @@ var rush = rush || {};
 rush.Game = (function() {
   // constructor
   function RushGame() {
-    console.log("Rush game starts.");
+     console.log("Rush game starts.");
 
     this.canvas = document.getElementById('game-canvas');
 

@@ -57,11 +57,37 @@
 
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Partie forum</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown05">
+                                <a class="dropdown-item" href="{{ path('discutea_forum_homepage') }}">Accueil Forum</a>
+                                <a class="dropdown-item" href="{{ path('sociale_index_front') }}">Liste des cas sociale</a>
+                                <a class="dropdown-item" href="#"></a>
+                                <a class="dropdown-item" href="#"></a>
+                            </div>
 
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('volontaireevents') }}">Events</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Messenger</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a>
+                                <a class="dropdown-item" href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a>
+                                <a class="dropdown-item" href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a>
+
+
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="ministry.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Activities</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="{{ path('volontaireevents') }}">Events</a>
+                                <a class="dropdown-item" href="{{ path('p_index') }}">Project</a>
+
+                            </div>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('volontaireajoutdon') }}">Dons</a>
                         </li>
@@ -69,9 +95,6 @@
                             <a class="nav-link" href="{{ path('AboutFront') }}">About</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
                         <a href="{{ path('fos_user_security_logout') }}">Logout</a>
                         {% else %}
@@ -95,74 +118,31 @@
                     <p>Perferendis eum illum voluptatibus dolore tempora consequatur minus asperiores temporibus.</p>
                   </div> -->
                 <div class="col-md-6 col-lg-6 mb-5 mb-lg-0">
-                    <h3 class="heading">Church Quick Links</h3>
+
                     <div class="row">
                         <div class="col-md-4">
-                            <ul class="list-unstyled">
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
+
                         </div>
                         <div class="col-md-4">
-                            <ul class="list-unstyled">
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
+
                         </div>
                         <div class="col-md-4">
-                            <ul class="list-unstyled">
-                                <li><a href="{{ path('AboutFront') }}">About Us</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Privacy &amp; Policy</a></li>
-                            </ul>
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                    <h3 class="heading">Events</h3>
-                    <div class="block-21 d-flex mb-4">
-                        <div class="text">
-                            <h3 class="heading mb-0"><a href="#"></a></h3>
-                            <div class="meta">
-                                <div><a href="#"><span class="ion-android-calendar"></span> </a></div>
-                                <div><a href="#"><span class="ion-android-person"></span> </a></div>
-                                <div><a href="#"><span class="ion-chatbubble"></span> </a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-21 d-flex mb-4">
-                        <div class="text">
-                            <h3 class="heading mb-0"><a href="#"></a></h3>
-                            <div class="meta">
-                                <div><a href="#"><span class="ion-android-calendar"></span> </a></div>
-                                <div><a href="#"><span class="ion-android-person"></span> </a></div>
-                                <div><a href="#"><span class="ion-chatbubble"></span> </a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-21 d-flex mb-4">
-                        <div class="text">
-                            <h3 class="heading mb-0"><a href="#"></a></h3>
-                            <div class="meta">
-                                <div><a href="#"><span class="ion-android-calendar"></span> </a></div>
-                                <div><a href="#"><span class="ion-android-person"></span> </a></div>
-                                <div><a href="#"><span class="ion-chatbubble"></span> </a></div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
                 </div>
                 <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
                     <h3 class="heading">Contact Information</h3>
                     <div class="block-23">
                         <ul>
                             <li><span class="icon ion-android-pin"></span><span class="text">2333  Esprit  Al-ghazela </span></li>
-                            <li><a href="#"><span class="icon ion-ios-telephone"></span><span class="text">+216 58 062 600 </span></a></li>
-                            <li><a href="#"><span class="icon ion-android-mail"></span><span class="text">heart2hold@gamil.com </span></a></li>
+                            <li><span class="icon ion-ios-telephone"></span><span class="text">+216 58 062 600 </span></li>
+                            <li><span class="icon ion-android-mail"></span><span class="text">heart2hold@gmail.com </span></li>
                         </ul>
                     </div>
                 </div>
@@ -171,13 +151,12 @@
                 <div class="col-md-12 text-center copyright">
 
                     <p class="float-md-left"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Heart2Hold</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     <p class="float-md-right">
-                        <a href="#" class="fa fa-facebook p-2"></a>
-                        <a href="#" class="fa fa-twitter p-2"></a>
-                        <a href="#" class="fa fa-linkedin p-2"></a>
-                        <a href="#" class="fa fa-instagram p-2"></a>
+                        <a href="https://www.facebook.com/Heart2Hold-115654803318209" class="fa fa-facebook p-2"></a>
+                        <a href="https://twitter.com/home" class="fa fa-twitter p-2"></a>
+
 
                     </p>
                 </div>

@@ -292,7 +292,9 @@
                             <ul class="sub">
                                 <li><a href="{{ path('affiche_BRefugie') }}">Refugee List</a></li>
                                 <li><a href="{{ path('ajout_BRefugie') }}">Add Refugee</a></li>
+                                <li><a href="{{ path('statRefugie') }}">Statique</a></li>
                                 <li><a href="{{ path('affiche_ConsultationBack') }}">Patient List</a></li>
+
                             </ul>
                         </li>
 
@@ -315,9 +317,8 @@
                                 <span>Partenaires</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="#">Basic Table</a></li>
-                                <li><a href="#">Responsive Table</a></li>
-                                <li><a href="#">Advanced Table</a></li>
+                                <li><a href="{{ path('partenaire_index') }}">liste des partenaires</a></li>
+                                <li><a href="{{ path('partenaire_new') }}">Ajouter partenaires</a></li>
                             </ul>
                         </li>
                         <li>

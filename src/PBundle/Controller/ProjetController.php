@@ -3,9 +3,13 @@
 namespace PBundle\Controller;
 
 use PBundle\Entity\Projet;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Projet controller.
@@ -14,12 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class ProjetController extends Controller
 {
-    /**
-     * Lists all projet entities.
-     *
-     * @Route("/", name="projet_index")
-     * @Method("GET")
-     */
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -32,11 +31,9 @@ class ProjetController extends Controller
     }
 
     /**
-     * Creates a new projet entity.
-     *
-     * @Route("/new", name="projet_new")
-     * @Method({"GET", "POST"})
-     */
+ * Creates a new projet entity.
+ *
+ */
     public function newAction(Request $request)
     {
         $projet = new Projet();
@@ -60,8 +57,7 @@ class ProjetController extends Controller
     /**
      * Finds and displays a projet entity.
      *
-     * @Route("/{id}", name="projet_show")
-     * @Method("GET")
+     *
      */
     public function showAction(Projet $projet)
     {
@@ -101,8 +97,6 @@ class ProjetController extends Controller
     /**
      * Deletes a projet entity.
      *
-     * @Route("/{id}", name="projet_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, Projet $projet)
     {
@@ -115,7 +109,7 @@ class ProjetController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('projet_index');
+        return $this->redirectToRoute('p_index');
     }
 
     /**

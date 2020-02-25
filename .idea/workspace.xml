@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5fbab7c-53bd-4f2a-a07e-f1e4a48e5df9" name="Default Changelist" comment="" />
+    <list default="true" id="a5fbab7c-53bd-4f2a-a07e-f1e4a48e5df9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/partenaire/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/partenaire/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/partenaire/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/partenaire/pdf.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/partenaire/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/projet/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/projet/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/projet/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/projet/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/PBundle/Controller/DefaultControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/front/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/front/images/video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/images/Book a Seat (1).jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_17_02_2020_20_39_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_25_02_2020_15_37_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_17_02_2020_20_40_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_25_02_2020_15_38_s.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/maddox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/maddox.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/DForumBundle/views/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base_front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base_front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base_frontSM.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base_frontSM.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/besoins/pdfall.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/besoins/pdfall.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/besoins/show1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/besoins/show1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/camp/pdf.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/camp/pdf.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Controller/PartenaireController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PBundle/Controller/PartenaireController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Controller/ProjetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PBundle/Controller/ProjetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Repository/PartenaireRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/PBundle/Repository/PartenaireRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/PBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Tests/Controller/PartenaireControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PBundle/Tests/Controller/ProjetControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RefugieBundle/Controller/RefugieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/RefugieBundle/Controller/RefugieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RefugieBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/RefugieBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/Refugie/stat.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/Refugie/stat.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/about.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/about.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/RefugieBundle/Resources/views/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/volontaireBundle/Controller/donController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/volontaireBundle/Controller/donController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/volontaireBundle/Resources/views/Default/jeu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/volontaireBundle/Resources/views/Default/jeu.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/volontaireBundle/Resources/views/event/Singleevents.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/volontaireBundle/Resources/views/event/Singleevents.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/js/rush-coin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/js/rush-coin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/js/rush-game.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/js/rush-game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/js/rush-hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/js/rush-hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/js/rush-topscores.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/js/rush-topscores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-coin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-coin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-game.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-hero.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-hero.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-obstacle.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-obstacle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-platform.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-platform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/jeu/rush/js/rush-preloader.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/jeu/rush/js/rush-preloader.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +86,9 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="maddox" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -73,13 +132,41 @@
       <path value="$PROJECT_DIR$/vendor/symfony/monolog-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/docdocdoc/nexmo-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/vendor/azine/emailupdateconfirmation-bundle" />
+      <path value="$PROJECT_DIR$/vendor/azine/email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/discutea/forum-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XXofLWC0DZBZd2hx2I5uq5RrEm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/front/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,11 +178,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ff\src\RefugieBundle\Resources\views" />
-      <recent name="C:\xampp\htdocs\ff\src\UserBundle\Resources\views\Default" />
-      <recent name="C:\xampp\htdocs\ff\app\Resources\views\default" />
-      <recent name="C:\xampp\htdocs\ff\web\cssfront" />
-      <recent name="C:\xampp\htdocs\ff\src\RefugieBundle\Resources\views\Refugie" />
+      <recent name="C:\xampp\htdocs\Maddox_heart2hold\web\front\images" />
+      <recent name="C:\xampp\htdocs\Maddox_heart2hold\app\Resources\views" />
+      <recent name="C:\xampp\htdocs\Maddox_heart2hold\src\PBundle\Repository" />
+      <recent name="C:\xampp\htdocs\Maddox_heart2hold\src\PBundle\Form" />
+      <recent name="C:\xampp\htdocs\Maddox_heart2hold\src\PBundle\Entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ff\src\RefugieBundle\Resources\views" />
@@ -114,17 +201,18 @@
       <command value="s doctrine:generate:form GcampBundle:Besoins" />
       <command value="s doctrine:generate:crud" />
       <command value="s doctrine:generate:entity UserBundle:Utilisateur" />
-      <command value="s doctrine:database:create" />
       <command value="generate entity" />
-      <command value="s generate:bundle" />
-      <command value="s doctrine:schema:create" />
       <command value="s doctrine:generate:form RefugieBundle:Refugie" />
-      <command value="c dump-autoload" />
       <command value="s doctrine:generate:form RefugieBundle:RefConsult" />
-      <command value="c clear-cache" />
+      <command value="s doctrine:schema:create" />
+      <command value="s debug:router" />
       <command value="s cache:clear" />
-      <command value="s server:run" />
+      <command value="s doctrine:database:create" />
+      <command value="c clear-cache" />
+      <command value="c dump-autoload" />
       <command value="s doctrine:schema:update --force" />
+      <command value="s generate:bundle" />
+      <command value="s server:run" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -159,11 +247,45 @@
       <workItem from="1581466910888" duration="4746000" />
       <workItem from="1581496395541" duration="7005000" />
       <workItem from="1581508102940" duration="21017000" />
-      <workItem from="1581531032878" duration="16248000" />
+      <workItem from="1581531032878" duration="21991000" />
+      <workItem from="1581700953311" duration="2963000" />
+      <workItem from="1581779585564" duration="7083000" />
+      <workItem from="1581944314969" duration="11233000" />
+      <workItem from="1581957257993" duration="1099000" />
+      <workItem from="1581960732726" duration="2993000" />
+      <workItem from="1581966401254" duration="1297000" />
+      <workItem from="1581968325956" duration="14904000" />
+      <workItem from="1582014568808" duration="33324000" />
+      <workItem from="1582101482469" duration="76000" />
+      <workItem from="1582109326475" duration="4728000" />
+      <workItem from="1582180748262" duration="3877000" />
+      <workItem from="1582553365678" duration="26158000" />
+      <workItem from="1582625216554" duration="4407000" />
+      <workItem from="1582634868623" duration="2615000" />
+      <workItem from="1582641214347" duration="4520000" />
+      <workItem from="1582652288586" duration="2252000" />
+      <workItem from="1582656427622" duration="2803000" />
+      <workItem from="1582661689641" duration="10171000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

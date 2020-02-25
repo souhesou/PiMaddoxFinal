@@ -1,0 +1,36 @@
+
+    <p>This is the PDF content.</p>
+    <h1>Partenaire</h1>
+    {% for partenaire in partenaire %}
+    <table>
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ partenaire.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ partenaire.nom }}</td>
+        </tr>
+        <tr>
+            <th>Adresse</th>
+            <td>{{ partenaire.adresse }}</td>
+        </tr>
+        <tr>
+            <th>Domaine</th>
+            <td>{{ partenaire.domaine }}</td>
+        </tr>
+        <tr>
+            <th>Type</th>
+            <td>{{ partenaire.type }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+
+    {% endfor %}
+
+    </ul>
+
+

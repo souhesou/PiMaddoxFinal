@@ -18,14 +18,14 @@ rush.Platform = (function(){
 
     // variable width with graphics
     if (width === 120) {
-      var image = new createjs.Bitmap("images/platform.png");
+      var image = new createjs.Bitmap("jeu/images/platform.png");
       this.addChild(image);
     } else if (width > 120) {
-      var imageLeft = new createjs.Bitmap("images/platform-left.png");
+      var imageLeft = new createjs.Bitmap("jeu/images/platform-left.png");
       this.addChild(imageLeft); // width 57
-      var imageRight = new createjs.Bitmap("images/platform-right.png");
+      var imageRight = new createjs.Bitmap("jeu/images/platform-right.png");
       this.addChild(imageRight); // width 62
-      var imageMiddle = new createjs.Bitmap("images/platform-middle.png");
+      var imageMiddle = new createjs.Bitmap("jeu/images/platform-middle.png");
       this.addChild(imageMiddle);
 
       // place them in correct place.

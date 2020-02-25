@@ -6,6 +6,7 @@ imports:
     - { resource: "@UserBundle/Resources/config/services.yml" }
     - { resource: "@RefugieBundle/Resources/config/services.yml" }
     - { resource: "@ForumBundle/Resources/config/services.yml" }
+    - { resource: "@PBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -34,6 +35,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+      engines: ['twig']
 
 # Twig Configuration
 twig:
@@ -116,3 +119,21 @@ knp_paginator:
     pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
     sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
     filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+
+
+stof_doctrine_extensions:
+  orm:
+    default:
+      sluggable: true
+
+discutea_forum:
+  preview:
+    enabled: true
+  knp_paginator:
+    page_name: p  #see knp_paginator.default_option.page_name
+    topics:
+      enabled: true
+      per_page: 10
+    posts:
+      enabled: true
+      per_page: 10

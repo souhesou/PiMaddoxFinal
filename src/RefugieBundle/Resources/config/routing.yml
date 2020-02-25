@@ -52,3 +52,7 @@ AboutFront:
 trieListeRefugie:
     path:     /listeRefg
     defaults: { _controller: RefugieBundle:Refugie:trieListeRefugie}
+
+statRefugie:
+    path:     /statistique
+    defaults: { _controller: RefugieBundle:Refugie:StatRef}

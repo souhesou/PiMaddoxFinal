@@ -34,7 +34,7 @@ rush.Hero = (function(){
     ];
   };
 
-  p.jump = function () {
+   p.jump = function () {
     if (this.onGround)
       this.velocity.y = -10;
   }

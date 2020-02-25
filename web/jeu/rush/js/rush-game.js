@@ -14,7 +14,7 @@ rush.Game = (function() {
 
     // Background
     this.bg = new createjs.Container();
-    var bgImage = new createjs.Bitmap('images/trees.png');
+    var bgImage = new createjs.Bitmap('jeu/images/trees.png');
     this.bg.addChild(bgImage);
     this.stage.addChild(this.bg);
 

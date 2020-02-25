@@ -1,66 +1,18 @@
-{% extends 'base.html.twig' %}
-
-{% block content %}
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<center>
-    <div style="height:50%;width: 50%">
-        <canvas id="myChart"></canvas>
-        <canvas id="myChart2"></canvas>
-        <script>
-            var ids=[];
-            var totals=[];
-            {% for id in ids %}
-            ids.push({{id}});
-            {% endfor %}
-            {% for total in totals %}
-            totals.push({{ total }})
-            {% endfor %}
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'line',
-
-                // The data for our dataset
-                data: {
-                    labels: ids,
-                    datasets: [{
-                        label: 'REFUGEE PAR AGE',
-                        backgroundColor: 'rgba(255, 99, 132,0.25)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        data: totals
-                    }]
-                },
-
-                // Configuration options go here
-                options: {}
-            });
-        </script>
-        <script>
-            var idf=[];
-            var nbventes=[];
-            {% for id in idf %}
-            idf.push({{id}});
-            {% endfor %}
-            {% for nb in nbvente %}
-            nbventes.push({{ nb }})
-            {% endfor %}
-            var ctx = document.getElementById('myChart2').getContext('2d');
-            var myDoughnutChart = new Chart(ctx, {
-                type: 'doughnut',
-                data : {
-                    datasets: [{
-                        label: 'Total par commande',
-                        backgroundColor: 'rgb(0, 99, 132)',
-                        borderColor: 'rgb(0, 99, 132)',
-                        data: nbventes
-                    }],
-
-                    // These labels appear in the legend and in the tooltips when hovering different arcs
-                    labels: idf
-                },
+{% extends('base.html.twig') %}
 
 
-            });
-        </script>
-    </div>
-</center>
+  {% block container %}<center>
+      <div class="container">
+          <h1>Statistique</h1>
+
+          <div id="div_chart"></div>
+      </div>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+          {{ gc_draw(piechart, 'div_chart') }}
+      </script>
+      <br>
+      <br>
+      <br>
+      <br></center>
+  {% endblock %}

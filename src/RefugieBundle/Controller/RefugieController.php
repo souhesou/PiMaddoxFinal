@@ -12,6 +12,7 @@ use RefugieBundle\Entity\Refugie;
 use RefugieBundle\Form\RefugieType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use volontaireBundle\Entity\event;
 
 class RefugieController extends Controller
 {
@@ -136,5 +137,41 @@ class RefugieController extends Controller
         $refug=$repository->trieListe();
         return ($this->render('@Refugie/Refugie/trieListeRefugie.html.twig', array('refugie'=>$refug)));
     }
+
+
+
+
+
+    public function StatRefAction(Request $request)
+    {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $Asso = $em->getRepository(Refugie::class)->findAll();
+        $data= array();
+        $stat=['Refugie', 'Origine'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($Asso as $classe) {
+            $stat=array();
+            array_push($stat,$classe->getNom(),$classe->getOrigine());
+            $nb=100;
+            $stat=[$classe->getOrigine(),$nb];
+            array_push($data,$stat);
+        }
+        $pieChart->getData()->setArrayToDataTable(
+            $data
+        );
+        $pieChart->getOptions()->setTitle(' Refugiés par Origine');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(500);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#E9967A');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+        return $this->render('@Refugie/Refugie/stat.html.twig', array('piechart' => $pieChart));
+    }
+
+
 
 }

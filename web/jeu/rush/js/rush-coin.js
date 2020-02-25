@@ -23,7 +23,7 @@ rush.Coin = (function(){
 
     // copy from zoe exported coin.json file.
     // frame: [x, y, width, height, imageIndex, regX, regY]
-    var spritesheetData = {"images": ["images/coin.png"], "frames": [[0, 0, 16, 16, 0, 0, 0], [16, 0, 16, 16, 0, 0, 0], [32, 0, 16, 16, 0, 0, 0]], "animations": {"all": {"frames": [0, 1, 2, 1, 0], frequency:10}}}
+    var spritesheetData = {"images": ["jeu/images/coin.png"], "frames": [[0, 0, 16, 16, 0, 0, 0], [16, 0, 16, 16, 0, 0, 0], [32, 0, 16, 16, 0, 0, 0]], "animations": {"all": {"frames": [0, 1, 2, 1, 0], frequency:10}}}
     var spritesheet = new createjs.SpriteSheet(spritesheetData);
     this.animation = new createjs.BitmapAnimation(spritesheet);
     this.animation.gotoAndPlay("all");

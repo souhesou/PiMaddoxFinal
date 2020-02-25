@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 use Symfony\Component\HttpFoundation\Response;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * Partenaire controller.
@@ -20,25 +22,38 @@ class PartenaireController extends Controller
     /**
      * Lists all partenaire entities.
      *
-     * @Route("/", name="partenaire_index")
-     * @Method("GET")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $queryBuilder = $em->getRepository('PBundle:Partenaire')->createQueryBuilder('p');
 
-        $partenaires = $em->getRepository('PBundle:Partenaire')->findAll();
+        if($request->query->getAlnum('filter'))
+        {
+            $queryBuilder
+                ->where('p.nom LIKE :nom')
+                ->setParameter('nom', '%'. $request->query->getAlnum('filter'). '%');
+        }
+        $query =$queryBuilder ->getQuery();
 
-        return $this->render('partenaire/index.html.twig', array(
-            'partenaires' => $partenaires,
-        ));
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+
+        $paginator =$this->get('knp_paginator');
+        $result =$paginator->paginate(
+            $query,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',5)
+        );
+        return $this->render('Partenaire/index.html.twig',[
+            'partenaire'=>$result,
+        ]);
     }
 
     /**
      * Creates a new partenaire entity.
      *
-     * @Route("/new", name="partenaire_new")
-     * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -63,8 +78,6 @@ class PartenaireController extends Controller
     /**
      * Finds and displays a partenaire entity.
      *
-     * @Route("/{id}", name="partenaire_show")
-     * @Method("GET")
      */
     public function showAction(Partenaire $partenaire)
     {
@@ -78,8 +91,6 @@ class PartenaireController extends Controller
     /**
      * Finds and displays a partenaire entity.
      *
-     * @Route("/{id}/pdf", name="partenaire_pdf")
-     * @Method("GET")
      */
     public   function  pdfAction(Request $request)
     {
@@ -111,8 +122,6 @@ class PartenaireController extends Controller
     /**
      * Displays a form to edit an existing partenaire entity.
      *
-     * @Route("/{id}/edit", name="partenaire_edit")
-     * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Partenaire $partenaire)
     {
@@ -136,8 +145,6 @@ class PartenaireController extends Controller
     /**
      * Deletes a partenaire entity.
      *
-     * @Route("/{id}", name="partenaire_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, Partenaire $partenaire)
     {
@@ -182,9 +189,9 @@ class PartenaireController extends Controller
         return new Response(json_encode($result));
     }
 
-    public function getRealEntities($partenaires){
-        foreach ($partenaires as $partenaire){
-            $realEntities[$partenaires->getId()] = [$partenaires->getNom(),$partenaires->getType()];
+    public function getRealEntities($partenaire){
+        foreach ($partenaire as $partenaire){
+            $realEntities[$partenaire->getId()] = [$partenaire->getNom(),$partenaire->getType()];
         }
         return $realEntities;
     }

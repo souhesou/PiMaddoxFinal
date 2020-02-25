@@ -1,0 +1,57 @@
+{% extends 'base_front.html.twig' %}
+
+{% block container %}
+    <center>
+    <h1>Projets list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomprojet</th>
+                <th>Description</th>
+                <th>Lieu</th>
+                <th>Date</th>
+                <th>Nombreparticipant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+
+
+        <tbody>
+        {% for projet in projets %}
+            <tr>
+                <td><a href="{{ path('projet_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
+                <td>{{ projet.nomProjet }}</td>
+                <td>{{ projet.description }}</td>
+                <td>{{ projet.lieu }}</td>
+                <td>{% if projet.date %}{{ projet.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ projet.nombreParticipant }}</td>
+                {% if projet.partenaire !=null %}
+                <td> {{ projet.partenaire.id }}</td>
+                {% else %}
+                    <td>partenaire</td>
+                    {% endif %}
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('projet_show', { 'id': projet.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('projet_edit', { 'id': projet.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('p_new') }}">Create a new projet</a>
+        </li>
+    </ul>
+    </center>
+{% endblock %}

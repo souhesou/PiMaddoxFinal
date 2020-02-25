@@ -1,6 +1,47 @@
 p_homepage:
-    path:     /
+    path:     /projet
     defaults: { _controller: PBundle:Default:index }
 ajax_search:
     path:     /search
     defaults: { _controller: PBundle:Partenaire:search }
+
+p_index:
+    path: /projet_index
+    defaults: { _controller: PBundle:Projet:index }
+
+p_new:
+    path: /projet_new
+    defaults: { _controller: PBundle:Projet:new }
+projet_show:
+    path: /projet_show/{id}
+    defaults: { _controller: PBundle:Projet:show }
+projet_edit:
+    path: /projet_edit/{id}
+    defaults: { _controller: PBundle:Projet:edit }
+
+projet_delete:
+    path: /projet_delete/{id}
+    defaults: { _controller: PBundle:Projet:delete }
+
+
+
+
+
+partenaire_index:
+    path: /partenaire_index
+    defaults: { _controller: PBundle:Partenaire:index }
+
+partenaire_new:
+    path: /partenaire_new
+    defaults: { _controller: PBundle:Partenaire:new }
+partenaire_show:
+    path: /partenaire_show/{id}
+    defaults: { _controller: PBundle:Partenaire:show }
+partenaire_edit:
+    path: /partenaire_edit/{id}
+    defaults: { _controller: PBundle:Partenaire:edit }
+
+partenaire_delete:
+    path: /partenaire_delete/{id}
+    defaults: { _controller: PBundle:Partenaire:delete }
+

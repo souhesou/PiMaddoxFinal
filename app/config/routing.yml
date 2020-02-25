@@ -1,6 +1,10 @@
+p:
+    resource: "@PBundle/Resources/config/routing.yml"
+    prefix:   /p
+
 refugie:
     resource: "@RefugieBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /refugie
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
@@ -18,9 +22,18 @@ fos_user:
 # routing.yml / routes.yaml
 
 fos_message:
-    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+  resource: "@FOSMessageBundle/Resources/config/routing.xml"
+  prefix: /inbox
 
 
 volontaire:
     resource: "@volontaireBundle/Resources/config/routing.yml"
     prefix:   /volentaire
+
+discutea_forum:
+    resource: "@DForumBundle/Resources/config/routing.yml"
+    prefix:   /
+
+Forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /frm

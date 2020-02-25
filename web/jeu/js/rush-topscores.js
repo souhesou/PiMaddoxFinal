@@ -1,4 +1,4 @@
-var rush = rush || {};
+ var rush = rush || {};
 
 rush.TopScores = (function(){
   function TopScores() {
